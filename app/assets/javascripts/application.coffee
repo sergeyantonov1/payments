@@ -8,7 +8,7 @@
 #= require jquery-ujs
 #= require foundation
 #= require current_user
-#= require_tree ../templates
+#= require payment_form
 #= require_tree .
 
 $(document).foundation()
