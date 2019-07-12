@@ -31,7 +31,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.datetime :locked_at
 
       t.timestamps
-      t.string :full_name
+      t.string :first_name, null: false, default: ""
+      t.string :second_name, null: false, default: ""
     end
 
     add_index :users, :email,                unique: true
