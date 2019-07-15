@@ -8,10 +8,10 @@ feature "Update Account" do
   end
 
   scenario "User updates account with valid data" do
-    fill_form(:user, :edit, full_name: "New Name")
+    fill_form(:user, :edit, first_name: "John", second_name: "Smith")
     click_on "Update"
 
-    expect(page).to have_content("New Name")
+    expect(page).to have_content("John Smith")
   end
 
   scenario "User enters not matched passwords" do

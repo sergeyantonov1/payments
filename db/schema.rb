@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20190712145636) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "providers", force: :cascade do |t|
+  create_table "authentication_methods", force: :cascade do |t|
     t.string "provider", null: false
     t.string "uid", null: false
     t.string "token"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20190712145636) do
     t.boolean "expires"
     t.datetime "expires_at"
     t.bigint "user_id", null: false
-    t.index ["provider", "uid"], name: "index_providers_on_provider_and_uid", unique: true
-    t.index ["user_id"], name: "index_providers_on_user_id"
+    t.index ["provider", "uid"], name: "index_authentication_methods_on_provider_and_uid", unique: true
+    t.index ["user_id"], name: "index_authentication_methods_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
