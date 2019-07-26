@@ -20,4 +20,12 @@ feature "Sign Up" do
     expect(page).to have_content("Your email address has been successfully confirmed")
     expect(page).to have_text(registered_user.full_name)
   end
+
+  scenario "via provider" do
+    visit root_path
+
+    click_on "Sign in with Google"
+
+    binding.pry
+  end
 end

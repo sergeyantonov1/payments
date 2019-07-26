@@ -1,16 +1,9 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
-    sign_in authenticatable_user
+    authenticate_via_provider
   end
 
-  private
-
-  def authenticatable_user
-    @authenticatable_user ||=
-      Users::AuthenticateViaProvider.call(auth_params: auth_params).user
-  end
-
-  def auth_params
-    request.env["omniauth.auth"]
+  def facebook
+    authenticate_via_provider
   end
 end
