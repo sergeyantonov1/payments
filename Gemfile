@@ -8,10 +8,9 @@ gem "rails", "5.1.6.1"
 # assets
 gem "autoprefixer-rails"
 gem "coffee-rails"
-gem "foundation-icons-sass-rails"
-gem "foundation-rails"
 gem "premailer-rails"
 gem "sass-rails", "~> 5.0.0", ">= 5.0.6"
+gem "semantic-ui-sass"
 gem "uglifier", ">= 2.7.2"
 
 source "https://rails-assets.org" do
