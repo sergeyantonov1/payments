@@ -15,6 +15,8 @@ module AuthenticationViaProviders
         user.first_name = user_params[:first_name]
         user.second_name = user_params[:second_name]
         user.password = Devise.friendly_token
+
+        user.confirm
       end
     end
   end

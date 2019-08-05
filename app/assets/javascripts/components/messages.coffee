@@ -2,13 +2,12 @@ class Messages
   constructor: (el) ->
     @$el = $(el)
 
-    bindEvents()
+    @_bindEvents()
 
   _bindEvents: ->
-    @$el.addEventListener("click", closeMessage())
+    @$el.on "click", @_closeMessage
 
-  _closeMessage: ->
-    @$el.closest(".message").transition "fade"
-    return
+  _closeMessage: =>
+    @$el.closest(".message").transition("fade")
 
 new Messages(el) for el in $(".message .close")

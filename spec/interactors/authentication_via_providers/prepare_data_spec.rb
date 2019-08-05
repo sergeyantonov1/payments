@@ -27,7 +27,7 @@ describe AuthenticationViaProviders::PrepareData do
     end
   end
 
-  context "when provider unsupported" do
+  context "when invalid credentials" do
     let(:auth_params) { mock_failed_authentication_via_google }
 
     it "returns error" do

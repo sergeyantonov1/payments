@@ -1,23 +1,6 @@
 - flash.each do |type, content|
-  - if type == "notice"
-    .ui.positive.message
-      i.close.icon
-      .header
-        | Success!
-      p = content
-  - elsif type == "warning"
-    .ui.warning.message
-      i.close.icon
-      .header
-        | Warning!
-      p = content
-  - elsif type == "alert"
-    .ui.negative.message
-      i.close.icon
-      .header
-        | Alert!
-      p = content
-
-
-
-
+  div class="ui #{type} message"
+    i.close.icon
+    .header
+      = "#{type.capitalize}!"
+    p = content

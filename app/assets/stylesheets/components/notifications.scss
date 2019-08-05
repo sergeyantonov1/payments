@@ -1,0 +1,11 @@
+.notice {
+  @extend .positive;
+}
+
+.warning {
+  @extend .warning;
+}
+
+.alert {
+  @extend .negative;
+}

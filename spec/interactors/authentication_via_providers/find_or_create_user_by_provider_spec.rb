@@ -32,6 +32,7 @@ describe AuthenticationViaProviders::FindOrCreateUserByProvider do
       expect(created_user.email).to eq "example@example.com"
       expect(created_user.first_name).to eq "John"
       expect(created_user.second_name).to eq "Smith"
+      expect(created_user.confirmed?).to be_truthy
     end
   end
 end
