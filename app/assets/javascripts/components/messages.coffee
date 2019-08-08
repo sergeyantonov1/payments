@@ -8,6 +8,6 @@ class Messages
     @$el.on "click", @_closeMessage
 
   _closeMessage: =>
-    @$el.closest(".message").transition("fade")
+    @$el.closest(".js-message").transition("fade")
 
-new Messages(el) for el in $(".message .close")
+new Messages(el) for el in $(".js-message .close")

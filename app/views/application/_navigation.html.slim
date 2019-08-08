@@ -6,7 +6,7 @@
     = active_link_to "Messages", "/messages", class: "item"
     .right.menu
       - if user_signed_in?
-        .ui.dropdown.item
+        .ui.dropdown.item.js-dropdown
           = current_user.full_name
           i.dropdown.icon
           .menu

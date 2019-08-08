@@ -9,5 +9,3 @@
 #= require current_user
 #= require semantic-ui
 #= require_tree .
-
-$('.dropdown').dropdown()
