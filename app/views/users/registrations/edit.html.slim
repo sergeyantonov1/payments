@@ -1,34 +1,19 @@
-.row
-  .columns
-    h2 = title("Edit #{current_user.full_name}")
+.sign-up-form
+  .ui.one.column.grid.container
+    .two.column.row.centered
+      .column.ui.segment
+        h2.ui.header.centered
+          = "Edit profile"
+        = simple_form_for resource,
+          as: resource_name,
+          url: registration_path(resource_name),
+          html: { method: :put },
+          class: "ui form" do |f|
 
-.row
-  .medium-5.columns
-    = simple_form_for resource,
-        as: resource_name,
-        url: registration_path(resource_name),
-        html: { method: :put } do |f|
+          = f.input :first_name, required: true, autofocus: true
+          = f.input :second_name, required: true
+          = f.input :email, required: true, value: resource.email, disabled: true
+          = f.input :password, required: true, placeholder: "********"
+          = f.input :password_confirmation, required: true, placeholder: "********"
 
-      .form-inputs
-        = f.input :first_name, required: true, autofocus: true
-        = f.input :second_name, required: true
-        = f.input :email, required: true
-        = f.input :password,
-            autocomplete: "off",
-            required: false
-        = f.input :password_confirmation,
-            required: false
-
-      .form-actions
-        = f.button :submit, "Update"
-
-  .medium-5.medium-offset-1.columns.end
-    h6
-      b Cancel my account
-    p
-      | Unhappy?
-      '
-      = link_to "Cancel my account.",
-          registration_path(resource_name),
-          data: { confirm: "Are you sure?" },
-          method: :delete
+          = f.button :submit, "Save", class: "ui blue submit button"

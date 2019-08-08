@@ -18,9 +18,9 @@ html class="no-js" lang="en"
 
   body
     = render "navigation"
-    = render "messages"
 
-    main.container
+    main.ui.container
+      = render "messages"
       = yield
 
     = render "footer"

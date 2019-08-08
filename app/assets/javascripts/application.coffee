@@ -6,8 +6,6 @@
 #
 #= require jquery2
 #= require jquery-ujs
-#= require foundation
 #= require current_user
+#= require semantic-ui
 #= require_tree .
-
-$(document).foundation()

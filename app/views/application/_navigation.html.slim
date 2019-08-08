@@ -1,7 +1,20 @@
-.title-bar data-hide-for="medium" data-responsive-toggle="navigation_menu"
-  button.menu-icon data-toggle="" type="button"
-  title-bar-title Menu
-
-nav.top-bar#navigation_menu
-  = render "navigation_main"
-  = render "navigation_user"
+.ui.large.menu
+  .ui.container
+    .item
+      = image_tag "logo.png"
+    = active_link_to "Home", root_path, class: "item"
+    = active_link_to "Messages", "/messages", class: "item"
+    .right.menu
+      - if user_signed_in?
+        .ui.dropdown.item.js-dropdown
+          = current_user.full_name
+          i.dropdown.icon
+          .menu
+            = link_to "Profile", "#", class: "item"
+            = link_to "Settings", edit_user_registration_path, class: "item"
+            = link_to "Sign out", destroy_user_session_path, class: "item"
+      - else
+        .item
+          = active_link_to "Log in", new_user_session_path, class: "ui primary button"
+        .item
+          = active_link_to "Sign up", new_user_registration_path, class: "ui primary button"

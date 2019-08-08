@@ -9,7 +9,6 @@ module AuthenticationViaProviders
       delegate :token, :refresh_token, :expires_at, :expires, to: :credentials
 
       def call
-        binding.pry
         context.user_params = user_params
         context.provider_params = provider_params
       end
@@ -27,7 +26,6 @@ module AuthenticationViaProviders
           provider: provider,
           uid: uid,
           token: token,
-          refresh_token: refresh_token,
           expires: expires,
           expires_at: expires_at
         }

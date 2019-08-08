@@ -25,7 +25,5 @@ feature "Sign Up" do
     visit root_path
 
     click_on "Sign in with Google"
-
-    binding.pry
   end
 end

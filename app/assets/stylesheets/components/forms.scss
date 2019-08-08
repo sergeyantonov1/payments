@@ -1,23 +1,27 @@
-.StripeElement {
-  box-sizing: border-box;
-  height: 40px;
-  padding: 10px 12px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-}
+.sign-in-form, .sign-up-form {
+  margin-top: 100px;
 
-.StripeElement--focus {
-  box-shadow: 0 1px 3px 0 #cfd7df;
-}
+  .checkbox-field {
+    input {
+      margin: 4px 10px 0 0;
+    }
 
-.StripeElement--invalid {
-  border-color: #fa755a;
-}
+    .field label {
+      display: inline;
+    }
+    margin-bottom: 20px;
+  }
 
-.StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
+  .social-links {
+    text-align: center;
+    margin-bottom: 15px;
+
+    img {
+      width: 40px;
+    }
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
 }

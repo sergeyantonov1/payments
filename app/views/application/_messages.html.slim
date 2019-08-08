@@ -1,5 +1,6 @@
 - flash.each do |type, content|
-  div(class="callout #{type}" data-closable)
-    = content
-    button.close-button(tabindex="0" aria-label="Dismiss alert" type="button" data-close)
-      span aria-hidden="true" &times;
+  div class="ui #{type} message js-message"
+    i.close.icon
+    .header
+      = "#{type.capitalize}!"
+    p = content
