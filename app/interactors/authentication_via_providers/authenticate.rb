@@ -5,6 +5,7 @@ module AuthenticationViaProviders
 
     organize AuthenticationViaProviders::PrepareData,
       AuthenticationViaProviders::FindOrCreateUserByProvider,
+      Users::CreateDefaultPermission,
       AuthenticationViaProviders::BindProviderToUser
   end
 end

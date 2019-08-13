@@ -5,6 +5,7 @@ describe AuthenticationViaProviders::Authenticate do
     [
       AuthenticationViaProviders::PrepareData,
       AuthenticationViaProviders::FindOrCreateUserByProvider,
+      Users::CreateDefaultPermission,
       AuthenticationViaProviders::BindProviderToUser
     ]
   end

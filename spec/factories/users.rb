@@ -11,8 +11,14 @@ FactoryGirl.define do
   trait :not_confirmed do
     confirmed_at nil
 
-    after(:create) do |user|
+    after :create do |user|
       user.update(confirmation_sent_at: 3.days.ago)
+    end
+  end
+
+  trait :with_default_permission do
+    after :create do |user|
+      user.permissions.create
     end
   end
 end
