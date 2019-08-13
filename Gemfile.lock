@@ -147,6 +147,8 @@ GEM
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
       mail (~> 2.7)
+    enumerize (2.3.1)
+      activesupport (>= 3.2)
     equatable (0.6.1)
     erubi (1.8.0)
     execjs (2.7.0)
@@ -553,6 +555,7 @@ DEPENDENCIES
   dotenv-rails
   draper
   email_spec
+  enumerize
   factory_girl_rails
   faker
   flamegraph
