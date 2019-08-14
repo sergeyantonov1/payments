@@ -24,7 +24,6 @@ module AuthenticationViaProviders
         "Preparers",
         provider.classify
       ].join("::").constantize
-
     rescue NameError
       context.fail!(error: UNSUPPORTED_PROVIDER_ERROR_MESSAGE)
     end

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Update Account" do
+describe "Update Account" do
   include_context "current user signed in"
 
   background do

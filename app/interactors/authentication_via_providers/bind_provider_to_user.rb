@@ -4,7 +4,6 @@ module AuthenticationViaProviders
 
     delegate :provider_params, :user, to: :context
 
-
     def call
       return if provider_existed?
 
@@ -19,8 +18,8 @@ module AuthenticationViaProviders
         uid: provider_params[:uid],
         token: provider_params[:token],
         expires: provider_params[:expires],
-        expires_at: provider_params[:expires_at],
-       )
+        expires_at: provider_params[:expires_at]
+      )
     end
 
     def provider_existed?

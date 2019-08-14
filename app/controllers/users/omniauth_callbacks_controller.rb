@@ -1,9 +1,11 @@
-class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def google_oauth2
-    authenticate_via_provider
-  end
+module Users
+  class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+    def google_oauth2
+      authenticate_via_provider
+    end
 
-  def facebook
-    authenticate_via_provider
+    def facebook
+      authenticate_via_provider
+    end
   end
 end

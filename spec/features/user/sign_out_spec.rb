@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Sign Out" do
+describe "Sign Out" do
   include_context "current user signed in"
 
   scenario "User signs out" do

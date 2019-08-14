@@ -24,6 +24,7 @@ RSpec/MultipleExpectations:
 RSpec/ExampleLength:
   Enabled: false
 
+
 RSpec/RepeatedDescription:
   Enabled: false
 
@@ -72,6 +73,12 @@ Layout/AlignParameters:
   SupportedStyles:
     - with_first_parameter
     - with_fixed_indentation
+
+Layout/AlignHash:
+  Enabled: false
+
+Layout/AlignArguments:
+  Enabled: false
 
 Lint/EndAlignment:
   EnforcedStyleAlignWith: variable

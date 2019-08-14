@@ -9,8 +9,6 @@ module Authentication
     end
   end
 
-  protected
-
   private
 
   def authenticate_via_provider

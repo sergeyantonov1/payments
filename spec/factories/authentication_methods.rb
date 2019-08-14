@@ -5,7 +5,7 @@ FactoryGirl.define do
     token { "token123" }
     secret { "secret123" }
     expires { true }
-    expires_at { 1564133288 }
+    expires_at { Time.current + 5.days }
     user
   end
 end
