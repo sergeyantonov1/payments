@@ -1,6 +1,5 @@
 module WebmockHelpers
   module Omniauth
-
     GOOGLE_OMNIAUTH_PARAMS = {
       provider: "google_oauth2",
       uid: "uid123",
@@ -15,11 +14,10 @@ module WebmockHelpers
       credentials: {
         token: "token123",
         refresh_token: "refreshtoken123",
-        expires_at: 1564133288,
+        expires_at: Time.current + 10.days,
         expires: true
       }
     }.freeze
-
 
     def mock_successed_authentication_via_google
       OmniAuth.config.add_mock(:google_oauth2, GOOGLE_OMNIAUTH_PARAMS)

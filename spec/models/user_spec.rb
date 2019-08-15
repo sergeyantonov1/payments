@@ -6,8 +6,8 @@ describe User do
   it { is_expected.to validate_presence_of :second_name }
 
   describe "#full_name" do
-    subject { create :user, first_name: "John", second_name: "Smith" }
+    subject(:user) { create :user, first_name: "John", second_name: "Smith" }
 
-    it { expect(subject.full_name).to eq "John Smith"}
+    it { expect(user.full_name).to eq "John Smith" }
   end
 end

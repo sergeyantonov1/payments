@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Resend Confirmation Email" do
+feature "Resend Confirmation Email" do
   let(:user) { create :user, :not_confirmed }
 
   scenario "Visitor resends email confirmation instructions" do

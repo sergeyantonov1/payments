@@ -12,6 +12,9 @@ AllCops:
     - vendor/**/*
     - tmp/**/*
 
+Capybara/FeatureMethods:
+  Enabled: false
+
 Rails/HasAndBelongsToMany:
   Enabled: false
 
@@ -80,7 +83,7 @@ Layout/AlignHash:
 Layout/AlignArguments:
   Enabled: false
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
   SupportedStylesAlignWith:
     - keyword

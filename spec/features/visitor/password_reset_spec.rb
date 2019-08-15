@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Password Reset" do
+feature "Password Reset" do
   let(:new_password) { "qwe123" }
   let(:user) { create :user }
 

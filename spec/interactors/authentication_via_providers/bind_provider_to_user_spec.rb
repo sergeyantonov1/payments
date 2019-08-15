@@ -1,12 +1,7 @@
 require "rails_helper"
 
 describe AuthenticationViaProviders::BindProviderToUser do
-  subject(:interactor) do
-    AuthenticationViaProviders::BindProviderToUser.new(
-      provider_params: provider_params,
-      user: user
-    )
-  end
+  subject(:interactor) { described_class.new(provider_params: provider_params, user: user) }
 
   let(:user) { create :user, email: "example@example.com" }
   let(:auth_method) { AuthenticationMethod.last }
@@ -16,7 +11,7 @@ describe AuthenticationViaProviders::BindProviderToUser do
       uid: "uid123",
       token: "token123",
       expires: true,
-      expires_at: 1564133288,
+      expires_at: Time.current + 10.days
     }
   end
 
@@ -30,7 +25,9 @@ describe AuthenticationViaProviders::BindProviderToUser do
   end
 
   context "when provider already binding" do
-    let!(:provider) { create :authentication_method, provider: "google_oauth2", user: user }
+    before do
+      create :authentication_method, provider: "google_oauth2", user: user
+    end
 
     it "returns" do
       expect { interactor.run }.not_to change(AuthenticationMethod, :count)

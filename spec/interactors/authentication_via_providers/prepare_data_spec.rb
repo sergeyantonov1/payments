@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe AuthenticationViaProviders::PrepareData do
-  subject(:interactor) do
-    AuthenticationViaProviders::PrepareData.new(auth_params: auth_params)
-  end
+  subject(:interactor) { described_class.new(auth_params: auth_params) }
 
   context "when provider is google" do
     let(:auth_params) { mock_successed_authentication_via_google }
@@ -21,9 +19,9 @@ describe AuthenticationViaProviders::PrepareData do
     end
 
     it "calls google preparer" do
-      interactor.run
+      expect(strategy).to receive(:call).with(auth_params: auth_params)
 
-      expect(strategy).to have_received(:call).with(auth_params: auth_params)
+      interactor.run
     end
   end
 

@@ -23,7 +23,9 @@ describe Users::CreateDefaultPermission do
   end
 
   context "when user has default permission" do
-    let!(:user) { create :user, :with_default_permission }
+    before do
+      create :user, :with_default_permission
+    end
 
     it "default permission isn't created" do
       expect { interactor.run }.not_to change(Permission, :count)

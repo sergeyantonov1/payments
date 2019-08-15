@@ -9,7 +9,7 @@ FactoryGirl.define do
   end
 
   trait :not_confirmed do
-    confirmed_at { }
+    confirmed_at {}
 
     after :create do |user|
       user.update(confirmation_sent_at: 3.days.ago)

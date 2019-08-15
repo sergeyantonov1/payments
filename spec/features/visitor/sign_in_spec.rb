@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Sign In" do
+feature "Sign In" do
   let(:user) { create :user }
   let(:unconfirmed_user) { create :user, :not_confirmed }
 

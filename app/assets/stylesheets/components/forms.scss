@@ -1,7 +1,10 @@
-.sign-in-form, .sign-up-form {
+.sign-in-form,
+.sign-up-form {
   margin-top: 100px;
 
   .checkbox-field {
+    margin-bottom: 20px;
+
     input {
       margin: 4px 10px 0 0;
     }
@@ -9,12 +12,11 @@
     .field label {
       display: inline;
     }
-    margin-bottom: 20px;
   }
 
   .social-links {
-    text-align: center;
     margin-bottom: 15px;
+    text-align: center;
 
     img {
       width: 40px;
