@@ -1,0 +1,34 @@
+version: v1.0
+
+name: "Payments"
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: Setup
+    task:
+      jobs:
+        - name: bundle
+          commands:
+          - checkout
+          - cache restore
+          - sem-version ruby 2.6.3
+          - bundle install --deployment -j 4 --path vendor/bundle
+          - cache store
+
+  - name: Unit tests
+    task:
+      prologue:
+        commands:
+          - checkout
+          - cache restore
+          - sem-service start postgres
+          - sem-version ruby 2.6.3
+          - bin/setup
+      jobs:
+      - name: RSpec
+        commands:
+          - bin/ci
