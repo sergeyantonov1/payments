@@ -21,13 +21,17 @@ blocks:
 
   - name: Unit tests
     task:
+      env_vars:
+        - name: RAILS_ENV
+          value: test
       prologue:
         commands:
           - checkout
           - cache restore
           - sem-service start postgres
           - sem-version ruby 2.6.3
-          - bin/setup
+          - bundle install --deployment -j 4 --path vendor/bundle
+          - bundle exec rake db:setup
       jobs:
       - name: RSpec
         commands:
